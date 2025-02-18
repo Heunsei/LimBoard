@@ -1,3 +1,9 @@
+import SignUpCard from "@/features/auth/components/sign-up-card";
+
 export default function Page() {
-  return <div>signup page</div>;
+  return (
+    <div>
+      <SignUpCard />
+    </div>
+  );
 }
