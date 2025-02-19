@@ -50,11 +50,22 @@ export function NavProjects({
 }) {
   const { isMobile } = useSidebar();
   const [projectName, setProjectName] = useState<string>("");
+  const [date, setDate] = useState<Date | undefined>(undefined);
+
+  const handleCreateButton = () => {
+    console.log(`${projectName} ${date}`);
+  };
+
   return (
     <SidebarGroup className="group-data-[collapsible=icon]:hidden">
       <SidebarGroupLabel className="flex justify-between">
         Projects
-        <Dialog onOpenChange={() => setProjectName("")}>
+        <Dialog
+          onOpenChange={() => {
+            setProjectName("");
+            setDate(undefined);
+          }}
+        >
           <DialogTrigger asChild>
             <Plus className="cursor-pointer" />
           </DialogTrigger>
@@ -71,21 +82,29 @@ export function NavProjects({
                   Project Name
                 </Label>
                 <Input
+                  required
                   placeholder="프로젝트 이름을 입력해주세요"
                   id="name"
                   value={projectName}
-                  onChangeCapture={(e) => {
+                  onChange={(e) => {
                     setProjectName(e.currentTarget.value);
                   }}
+                  // onChangeCapture={}
                   className="col-span-3"
                 />
               </div>
               <div className="grid items-center gap-4">
-                <DatePicker />
+                <DatePicker value={date} setValue={setDate} />
               </div>
             </div>
             <DialogFooter>
-              <Button type="submit">프로젝트 생성</Button>
+              <Button
+                type="submit"
+                onClick={handleCreateButton}
+                disabled={date === undefined || !projectName}
+              >
+                프로젝트 생성
+              </Button>
             </DialogFooter>
           </DialogContent>
         </Dialog>

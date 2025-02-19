@@ -13,12 +13,19 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover";
 
-export function DatePicker() {
-  const [date, setDate] = React.useState<Date>();
+export function DatePicker({
+  value,
+  setValue,
+}: {
+  value: Date | undefined;
+  setValue: React.Dispatch<React.SetStateAction<Date | undefined>>;
+}) {
   const [isCalendarOpen, setIsCalendarOpen] = React.useState(false);
+
   React.useEffect(() => {
-    console.log(date);
-  }, [date]);
+    console.log(value);
+  }, [value]);
+
   return (
     <Popover open={isCalendarOpen} onOpenChange={setIsCalendarOpen}>
       <PopoverTrigger asChild>
@@ -26,19 +33,24 @@ export function DatePicker() {
           variant={"outline"}
           className={cn(
             "justify-start text-left font-normal",
-            !date && "text-muted-foreground"
+            !value && "text-muted-foreground"
           )}
         >
           <CalendarIcon />
-          {date ? format(date, "PPP") : <span>프로젝트 마감 기한을 설정해주세요</span>}
+          {value ? (
+            format(value, "PPP")
+          ) : (
+            <span>프로젝트 마감 기한을 설정해주세요</span>
+          )}
         </Button>
       </PopoverTrigger>
       <PopoverContent className="w-auto p-0" align="start">
         <Calendar
           mode="single"
-          selected={date}
+          required
+          selected={value}
           onSelect={(e) => {
-            setDate(e);
+            setValue(e);
             setIsCalendarOpen(false);
           }}
           disabled={(date) => date < new Date()}
