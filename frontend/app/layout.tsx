@@ -5,6 +5,12 @@ import "./globals.css";
 
 const sans = localFont({ src: "../public/font/GmarketSansLight.otf" });
 
+const gmarketBold = localFont({
+  src: "../public/font/GmarketSansBold.otf",
+  display: "swap",
+  variable: "--font-gmarket-bold",
+});
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -28,7 +34,7 @@ export default function RootLayout({
   return (
     <html lang="kr">
       <body
-        className={`${sans.className} ${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${sans.className} ${gmarketBold.variable} ${geistSans.variable} ${geistMono.variable} antialiased`}
       >
         {children}
       </body>

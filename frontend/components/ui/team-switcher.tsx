@@ -31,6 +31,7 @@ export function TeamSwitcher({
 }) {
   const { isMobile } = useSidebar();
   const [activeTeam, setActiveTeam] = React.useState(teams[0]);
+
   return (
     <SidebarMenu>
       <SidebarMenuItem>
@@ -76,12 +77,15 @@ export function TeamSwitcher({
             ))}
             <DropdownMenuSeparator />
             <DropdownMenuItem className="gap-2 p-2">
-              <div className="flex size-6 items-center justify-center rounded-md border bg-background">
-                <Plus className="size-4" />
-              </div>
-              <div className="font-medium text-muted-foreground">
-                <Link href="/addteam">Add team</Link>
-              </div>
+              <Link
+                href="/addteam"
+                className="flex gap-2 w-full h-full items-center"
+              >
+                <div className="flex size-6 box-content items-center justify-center rounded-md border bg-background">
+                  <Plus className="size-4" />
+                </div>
+                <p>Add team</p>
+              </Link>
             </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>

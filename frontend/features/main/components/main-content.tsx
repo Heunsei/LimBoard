@@ -24,7 +24,9 @@ export default function MainContent({ props }: { props: mainContentProps }) {
         <Breadcrumb>
           <BreadcrumbList>
             <BreadcrumbItem className="hidden md:block">
-              <BreadcrumbLink>{props.title}</BreadcrumbLink>
+              <BreadcrumbLink className="font-black">
+                {props.title}
+              </BreadcrumbLink>
             </BreadcrumbItem>
           </BreadcrumbList>
         </Breadcrumb>
