@@ -1,5 +1,5 @@
 import MainContent from "@/features/main/components/main-content";
-import MemberDashboard from "@/features/main/components/member-dashboard";
+import MemberDashboard from "@/features/members/components/member-dashboard";
 
 const membersPageData = {
   title: "Members",

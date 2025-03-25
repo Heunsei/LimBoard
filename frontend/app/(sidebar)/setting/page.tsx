@@ -1,6 +1,6 @@
 import MainContent from "@/features/main/components/main-content";
-import DeleteTeamCard from "@/features/main/components/team-delete-card";
-import TeamSettingCard from "@/features/main/components/team-setting-card";
+import DeleteTeamCard from "@/features/setting/components/team-delete-card";
+import TeamSettingCard from "@/features/setting/components/team-setting-card";
 
 const membersPageData = {
   title: "Settings",

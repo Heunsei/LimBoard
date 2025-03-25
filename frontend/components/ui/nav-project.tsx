@@ -34,7 +34,6 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { Input } from "./input";
-import { Label } from "./label";
 import { Button } from "./button";
 import { DatePicker } from "./date-picker";
 import { useState } from "react";
@@ -77,10 +76,7 @@ export function NavProjects({
               </DialogDescription>
             </DialogHeader>
             <div className="grid gap-4 py-4">
-              <div className="grid grid-cols-4 items-center gap-4">
-                <Label htmlFor="name" className="text-right">
-                  Project Name
-                </Label>
+              <div className="grid items-center gap-4">
                 <Input
                   required
                   placeholder="프로젝트 이름을 입력해주세요"
