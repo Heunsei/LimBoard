@@ -5,7 +5,7 @@ export default function OverviewCard() {
   return (
     <Card className="w-full">
       <CardHeader>
-        <CardTitle>over view</CardTitle>
+        <CardTitle>overview</CardTitle>
       </CardHeader>
       <CardContent className="box-content grid place-items-center m-5">
         <OverViewDoughnutChart />
