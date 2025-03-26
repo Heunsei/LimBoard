@@ -37,6 +37,7 @@ import { Input } from "./input";
 import { Button } from "./button";
 import { DatePicker } from "./date-picker";
 import { useState } from "react";
+import Link from "next/link";
 
 export function NavProjects({
   projects,
@@ -44,7 +45,6 @@ export function NavProjects({
   projects: {
     name: string;
     url: string;
-    icon: LucideIcon;
   }[];
 }) {
   const { isMobile } = useSidebar();
@@ -109,10 +109,9 @@ export function NavProjects({
         {projects.map((item) => (
           <SidebarMenuItem key={item.name}>
             <SidebarMenuButton asChild>
-              <a href={item.url}>
-                <item.icon />
+              <Link href={`/projects/${item.url}`}>
                 <span>{item.name}</span>
-              </a>
+              </Link>
             </SidebarMenuButton>
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
