@@ -1,5 +1,6 @@
 "use client";
 import MainContent from "@/features/main/components/main-content";
+import ProjectTaskContainer from "@/features/projects/components/project-task-container";
 import { useParams } from "next/navigation";
 export default function Page() {
   const membersPageData = { title: "project" };
@@ -8,7 +9,9 @@ export default function Page() {
   return (
     <>
       <MainContent props={membersPageData} />
-      <div className="p-4"></div>
+      <div className="gird grid-cols-3 p-4 w-full">
+        <ProjectTaskContainer />
+      </div>
     </>
   );
 }

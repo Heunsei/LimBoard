@@ -56,8 +56,8 @@ export default function StateToggleButton({
 
       {showToggle && !disabled && (
         <div className="flex flex-col gap-2 absolute z-10 left-20 mt-2 w-64 p-4 bg-white shadow-lg rounded-lg border">
-          <Button>Not started</Button>
-          <Button>Started</Button>
+          <Button>Todo</Button>
+          <Button>In Progress</Button>
           <Button>Done</Button>
         </div>
       )}

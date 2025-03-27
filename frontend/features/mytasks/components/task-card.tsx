@@ -19,7 +19,7 @@ const getIconComponent = (header: CardHeaderType) => {
       return <UserCheckIcon className={option} />;
     case "completed tasks":
       return <ClipboardCheckIcon className={option} />;
-    case "overdue tasks":
+    case "todo tasks":
       return <ClockAlertIcon className={option} />;
   }
 };

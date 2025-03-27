@@ -21,8 +21,8 @@ export default function AssignedTaskCard() {
       <CardHeader>
         <div>
           <p className="inline">showing : </p>
-          <p className="inline">assigned(2), </p>
-          <p className="inline">not started(), </p>
+          <p className="inline">in progress(2), </p>
+          <p className="inline">todo(), </p>
           <p className="inline">done()</p>
         </div>
       </CardHeader>
