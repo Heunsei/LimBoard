@@ -9,7 +9,11 @@ export default function Page() {
   return (
     <>
       <MainContent props={membersPageData} />
-      <div className="gird grid-cols-3 p-4 w-full">
+      <div className="p-4 gap-3 grid font-black">
+        <div className="flex flex-col gap-2">
+          <p className="text-2xl gmarketBold">Project Board</p>
+          <p>{"project name"} tasks</p>
+        </div>
         <ProjectTaskContainer />
       </div>
     </>

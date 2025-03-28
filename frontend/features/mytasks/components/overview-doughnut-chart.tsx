@@ -4,7 +4,7 @@ import { Doughnut } from "react-chartjs-2";
 ChartJS.register(ArcElement, Tooltip, Legend);
 
 const dummyData = {
-  labels: ["To do", "In progress", "Done"],
+  labels: ["To do", "In process", "Done"],
   datasets: [
     {
       label: "number of task",

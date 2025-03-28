@@ -6,7 +6,7 @@ export default function TaskProgress(): React.ReactNode {
       <TaskCard cardHeader="total project" cardData={1} />
       <TaskCard cardHeader="total task" cardData={1} />
       <TaskCard cardHeader="todo tasks" cardData={1} />
-      <TaskCard cardHeader="assigned tasks" cardData={1} />
+      <TaskCard cardHeader="in process tasks" cardData={1} />
       <TaskCard cardHeader="completed tasks" cardData={1} />
     </div>
   );

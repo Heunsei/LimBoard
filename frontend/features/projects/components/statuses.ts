@@ -1,9 +1,9 @@
-import { taskState, task } from "@/types/task";
+import { taskStatuses, task } from "@/types/task";
 
 // TODO getTasksByStatus 수정
-export const statuses: taskState[] = ["todo", "in process", "done"] as const;
+export const statuses: taskStatuses[] = ["todo", "in process", "done"] as const;
 
-export type TasksByStatus = { [K in taskState]: task[] };
+export type TasksByStatus = { [K in taskStatuses]: task[] };
 
 export const getTasksByStatus = (unorderedTasks: task[]) => {
   const tasksByStatus: TasksByStatus = unorderedTasks.reduce(

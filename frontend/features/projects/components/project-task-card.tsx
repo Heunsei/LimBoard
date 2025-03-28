@@ -1,12 +1,12 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { taskType } from "@/types/task";
+import { task } from "@/types/task";
 import { Draggable } from "@hello-pangea/dnd";
 
 export default function ProjectTaskCard({
   task,
   index,
 }: {
-  task: taskType;
+  task: task;
   index: number;
 }) {
   return (

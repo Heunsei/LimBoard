@@ -1,18 +1,19 @@
 "use client";
-import { Card } from "@/components/ui/card";
-import { taskStateType, taskType } from "@/types/task";
+import { Card, CardHeader, CardTitle } from "@/components/ui/card";
+import { taskStatuses, task } from "@/types/task";
 import { Droppable } from "@hello-pangea/dnd";
 import ProjectTaskCard from "./project-task-card";
 import { useState } from "react";
+import { getTasksByStatus, TasksByStatus } from "./statuses";
 
 export default function ProjectTaskColumn({
   status,
   tasks,
 }: {
-  status: taskStateType;
-  tasks: taskType[];
+  status: taskStatuses;
+  tasks: task[];
 }) {
-  const [tasksByStatus, setTasksByStatus] = useState<tasksByStatus>(
+  const [tasksByStatus, setTasksByStatus] = useState<TasksByStatus>(
     getTasksByStatus([])
   );
   return (
@@ -21,8 +22,11 @@ export default function ProjectTaskColumn({
         <Card
           ref={droppableProvided.innerRef}
           {...droppableProvided.droppableProps}
-          className={snapshot.isDraggingOver ? " isDraggingOver" : ""}
+          className="flex flex-col p-5 pt-1 gap-2"
         >
+          <CardHeader className="items-center">
+            <CardTitle className="">{status}</CardTitle>
+          </CardHeader>
           {tasks.map((task, index) => (
             <ProjectTaskCard key={task.id} task={task} index={index} />
           ))}

@@ -15,7 +15,7 @@ const getIconComponent = (header: CardHeaderType) => {
       return <FolderKanbanIcon className={option} />;
     case "total task":
       return <StickyNoteIcon className={option} />;
-    case "assigned tasks":
+    case "in process tasks":
       return <UserCheckIcon className={option} />;
     case "completed tasks":
       return <ClipboardCheckIcon className={option} />;

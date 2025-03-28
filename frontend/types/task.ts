@@ -1,13 +1,13 @@
 import { user } from "./user";
 
-type taskState = "todo" | "in process" | "done";
+type taskStatuses = "todo" | "in process" | "done";
 
 type task = {
   id: number;
   name: string;
   assigned: null | user;
   memo: string;
-  state: taskState;
+  state: taskStatuses;
 };
 
-export type { taskState, task };
+export type { taskStatuses, task };
