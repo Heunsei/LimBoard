@@ -1,0 +1,7 @@
+model Team {
+    id Int @id @default(autoincrement())
+    name String 
+    teamImage String?
+    member TeamsOnUsers[]
+    project Project[]
+}

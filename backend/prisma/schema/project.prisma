@@ -1,0 +1,9 @@
+model Project {
+    id Int @id @default(autoincrement())
+    name String @unique
+    startDate DateTime @default(now())
+    endDate DateTime
+    task Task[]
+    team Team @relation(fields: [teamId], references: [id])
+    teamId Int
+}
