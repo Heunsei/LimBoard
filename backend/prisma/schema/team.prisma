@@ -2,6 +2,7 @@ model Team {
     id Int @id @default(autoincrement())
     name String 
     teamImage String?
+    createdAt DateTime
     member TeamsOnUsers[]
     project Project[]
 }
