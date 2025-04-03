@@ -10,7 +10,7 @@ model User {
 }
 
 model TeamsOnUsers {
-    team   Team @relation(fields: [teamId], references: [id])
+    team Team @relation(fields: [teamId], references: [id])
     teamId Int
     user   User @relation(fields: [userId], references: [id])
     userId Int

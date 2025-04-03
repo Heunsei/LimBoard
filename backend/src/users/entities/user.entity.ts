@@ -1,11 +1,11 @@
-import { IsNumber } from "class-validator";
-import { TaskEntity } from "src/tasks/entities/task.entity";
-import { TeamEntity } from "src/teams/entities/team.entity";
+import { TaskEntity } from 'src/tasks/entities/task.entity';
+import { TeamEntity } from 'src/teams/entities/team.entity';
 
 export class UserEntity {
-    id: number
-    name: String
-    email: String
-    team: TeamEntity[]
-    task: TaskEntity[]
+  id: number;
+  name: string;
+  email: string;
+  password: string;
+  team: TeamEntity[];
+  task: TaskEntity[];
 }
