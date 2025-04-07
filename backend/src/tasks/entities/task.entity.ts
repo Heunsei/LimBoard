@@ -1,5 +1,5 @@
 import { ProjectEntity } from "src/projects/entities/project.entity"
-import { UserEntity } from "src/users/entities/user.entity"
+import { UserEntity } from "src/users/entity/user.entity"
 
 export class TaskEntity {
     id: Number

@@ -7,6 +7,7 @@ import { TasksModule } from './tasks/tasks.module';
 import { ProjectsModule } from './projects/projects.module';
 import { CommonModule } from './common/common.module';
 import { AuthModule } from './auth/auth.module';
+import { ConfigModule } from '@nestjs/config';
 
 @Module({
   imports: [
@@ -16,6 +17,7 @@ import { AuthModule } from './auth/auth.module';
     ProjectsModule,
     CommonModule,
     AuthModule,
+    ConfigModule.forRoot({ envFilePath: '.env', isGlobal: true }),
   ],
   controllers: [AppController],
   providers: [AppService],
