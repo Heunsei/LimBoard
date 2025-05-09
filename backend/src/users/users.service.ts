@@ -42,4 +42,14 @@ export class UsersService {
   remove(id: number) {
     return `This action removes a #${id} user`;
   }
+
+  async getUserByEmail(email: string) {
+    const prisma = new PrismaClient();
+    const user = await prisma.user.findFirst({
+      where: {
+        email: email,
+      },
+    });
+    return user;
+  }
 }

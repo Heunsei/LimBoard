@@ -1,0 +1,16 @@
+services:
+  nextjs:
+    build:
+      context: ../frontend
+      dockerfile: ../docker/next.Dockerfile
+    ports:
+      - 3000:3000
+
+  nginx:
+    build:
+      context: ../
+      dockerfile: docker/nginx/nginx.Dockerfile
+    ports:
+      - 80:80
+    depends_on:
+      - nextjs

@@ -79,4 +79,23 @@ export class AuthService {
     if (!isPasswordOk) throw new UnauthorizedException('비밀번호가 틀립니다');
     return loginUser;
   }
+
+  async authenticateWithEmailAndPassword(
+    user: Pick<UserEntity, 'email' | 'password'>,
+  ) {
+    const existingUser = await this.usersService.getUserByEmail(user.email);
+    if (!existingUser) {
+      throw new UnauthorizedException('존재하지 않는 사용자 입니다');
+    }
+    /**
+     * 파라미터
+     * 입력 비밀번호
+     * 기존 해시 -> 저장되어 있는 해시
+     */
+    const passOk = await bcrypt.compare(user.password, existingUser.password);
+    if (!passOk) {
+      throw new UnauthorizedException('비밀번호가 틀립니다');
+    }
+    return existingUser;
+  }
 }

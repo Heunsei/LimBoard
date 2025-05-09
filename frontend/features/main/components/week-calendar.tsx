@@ -60,7 +60,7 @@ export const WeekCalendar = () => {
             <div
               key={dayOfMonthIndex}
               className="cursor-pointer p-5 p2"
-              onClick={() => handleClickDayGrid(dayOfMonth)}
+              onClick={() => dayOfMonth && handleClickDayGrid(dayOfMonth)}
             >
               {dayOfMonth?.day}
             </div>
